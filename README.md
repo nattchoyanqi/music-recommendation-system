@@ -20,29 +20,6 @@ An interactive web application built with **Streamlit** that suggests 10 similar
 
 ---
 
-## 🛠️ Installation & Setup
-
-Ensure you have Python 3.8 or higher installed on your system.
-
-### 1. Clone this Repository
-```bash
-git clone github.com
-cd music-recommendation-system
-```
-
-### 2. Install Dependencies
-Install the required packages using your terminal:
-```bash
-pip install numpy pandas scikit-learn streamlit
-```
-
-### 3. Add the Pre-trained Files
-Ensure your project folder contains your saved model variables from your Jupyter Notebook:
-- `app.py` (The web script)
-- `music_recommendation_model.pkl` (The file holding your Kaggle DataFrame and Cosine Similarity matrix)
-
----
-
 ## 💻 How to Run
 
 Launch the web app directly from your terminal workspace:
