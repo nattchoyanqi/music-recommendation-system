@@ -20,9 +20,31 @@ An interactive web application built with **Streamlit** that suggests 10 similar
 
 ---
 
+## 📦 Environment & Data Serialization
+To keep the repository lightweight and professional, we use a virtual environment and pre-computed model files. Note that these are excluded from GitHub via .gitignore.
+
+1. **The Virtual Environment (.venv/)**
+- A local folder containing the project's specific Python interpreter and libraries (Streamlit, Pandas, etc.).
+- It ensures isolation. This prevents conflicts between project dependencies and keeps the environment consistent for every developer.
+- These folders are massive and system-specific. Instead, we use requirements.txt so you can recreate the environment locally.
+
+2. **Pickle Files (.pkl)**
+- Binary "snapshots" of our processed music DataFrame and the heavy Cosine Similarity matrix.
+- Speed. Calculating musical "distance" for thousands of tracks is math-intensive. By "pickling" the results, the app loads the answers instantly without recalculating on every refresh.
+- These matrices often exceed 100MB (GitHub’s limit). You generate these locally by running the processing script.
+
+---
 ## 💻 How to Run
 
-Launch the web app directly from your terminal workspace:
+1) Setup Environment:
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Mac/Linux
+.venv\Scripts\activate     # Windows
+pip install streamlit pandas numpy scikit-learn
+```
+
+2) Launch the web app directly from your terminal workspace:
 ```bash
 streamlit run app.py
 ```
